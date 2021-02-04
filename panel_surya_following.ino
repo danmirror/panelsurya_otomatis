@@ -127,7 +127,7 @@ void loop()
  
   if(dataJam==18){
     digitalWrite(dirPin, LOW); // putar searah jarum jam
-    while(iteration>101){
+    while(iteration>50){
       digitalWrite(stepPin, HIGH);
       delayMicroseconds(10000); // ganti delay untuk mempercepat motor
       digitalWrite(stepPin, LOW);
