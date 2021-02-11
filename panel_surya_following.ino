@@ -26,8 +26,19 @@ void loop()
   int dataDetik = waktu.sec;
 //  Serial.println(iteration);
 
- if(dataJam==7){
-    Serial.println("masuk");
+ if(dataJam==10){
+    Serial.println("jam 10");
+    digitalWrite(dirPin, HIGH); // putar searah jarum jam
+    while(iteration>20){
+      digitalWrite(stepPin, HIGH);
+      delayMicroseconds(10000); // ganti delay untuk mempercepat motor
+      digitalWrite(stepPin, LOW);
+      delayMicroseconds(10000); // ganti delay untuk mempercepat motor
+      iteration++;
+    }
+  }
+  else if(dataJam==12){
+    Serial.println("jam 12");
     digitalWrite(dirPin, HIGH); // putar searah jarum jam
     while(iteration<50){
       digitalWrite(stepPin, HIGH);
@@ -37,9 +48,8 @@ void loop()
       iteration++;
     }
   }
-  
-  if(dataJam==9){
-    Serial.println("masuk");
+  else if(dataJam==14){
+    Serial.println("jam 14");
     digitalWrite(dirPin, HIGH); // putar searah jarum jam
     while(iteration<70){
       digitalWrite(stepPin, HIGH);
@@ -49,32 +59,8 @@ void loop()
       iteration++;
     }
   }
-  if(dataJam==10){
-    Serial.println("masuk");
-    digitalWrite(dirPin, HIGH); // putar searah jarum jam
-    while(iteration<80){
-      digitalWrite(stepPin, HIGH);
-      delayMicroseconds(10000); // ganti delay untuk mempercepat motor
-      digitalWrite(stepPin, LOW);
-      delayMicroseconds(10000); // ganti delay untuk mempercepat motor
-      iteration++;
-    }
-  }
-  if(dataJam==11){
-    Serial.println("masuk");
-    digitalWrite(dirPin, HIGH); // putar searah jarum jam
-    while(iteration<90){
-      digitalWrite(stepPin, HIGH);
-      delayMicroseconds(10000); // ganti delay untuk mempercepat motor
-      digitalWrite(stepPin, LOW);
-      delayMicroseconds(10000); // ganti delay untuk mempercepat motor
-      iteration++;
-    }
-  }
-
-
-  if(dataJam==12){
-    Serial.println("masuk");
+  else if(dataJam==16){
+    Serial.println("jam 16");
     digitalWrite(dirPin, HIGH); // putar searah jarum jam
     while(iteration<100){
       digitalWrite(stepPin, HIGH);
@@ -84,50 +70,10 @@ void loop()
       iteration++;
     }
   }
-  if(dataJam==13){
-    digitalWrite(dirPin, HIGH); // putar searah jarum jam
-    while(iteration<110){
-      digitalWrite(stepPin, HIGH);
-      delayMicroseconds(10000); // ganti delay untuk mempercepat motor
-      digitalWrite(stepPin, LOW);
-      delayMicroseconds(10000); // ganti delay untuk mempercepat motor
-      iteration++;
-    }
-  }
-  if(dataJam==14){
-    digitalWrite(dirPin, HIGH); // putar searah jarum jam
-    while(iteration<120){
-      digitalWrite(stepPin, HIGH);
-      delayMicroseconds(10000); // ganti delay untuk mempercepat motor
-      digitalWrite(stepPin, LOW);
-      delayMicroseconds(10000); // ganti delay untuk mempercepat motor
-      iteration++;
-    }
-  }
-  if(dataJam==15){
-    digitalWrite(dirPin, HIGH); // putar searah jarum jam
-    while(iteration<130){
-      digitalWrite(stepPin, HIGH);
-      delayMicroseconds(10000); // ganti delay untuk mempercepat motor
-      digitalWrite(stepPin, LOW);
-      delayMicroseconds(10000); // ganti delay untuk mempercepat motor
-      iteration++;
-    }
-  }
-  if(dataJam==16){
-    digitalWrite(dirPin, HIGH); // putar searah jarum jam
-    while(iteration<150){
-      digitalWrite(stepPin, HIGH);
-      delayMicroseconds(10000); // ganti delay untuk mempercepat motor
-      digitalWrite(stepPin, LOW);
-      delayMicroseconds(10000); // ganti delay untuk mempercepat motor
-      iteration++;
-    }
-  }
- 
-  if(dataJam==18){
+  else if(dataJam==17){
+    Serial.println("jam 17");
     digitalWrite(dirPin, LOW); // putar searah jarum jam
-    while(iteration>50){
+    while(iteration>0){
       digitalWrite(stepPin, HIGH);
       delayMicroseconds(10000); // ganti delay untuk mempercepat motor
       digitalWrite(stepPin, LOW);
@@ -135,5 +81,9 @@ void loop()
       iteration--;
     }
   }
+  else{
+    Serial.println("night");
+  }
+
 }
  
